@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <title>Righteous Lips | South Africa Nationwide Delivery</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Canvas Confetti for Checkout celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pouch: {
+              pink: '#ff7096',
+              hot: '#f43f6e',
+              bubblegum: '#ff85a2',
+              soft: '#ffd1dc',
+              darkberry: '#4a0429',
+              plum: '#38021e'
+            },
+            lilac: {
+              100: '#f5edff',
+              200: '#e9d5ff',
+              300: '#d8b4fe',
+              400: '#c084fc',
+              500: '#a855f7',
+              700: '#7e22ce',
+              900: '#3b0764'
+            },
+            citrus: {
+              100: '#fefce8',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+              900: '#713f12'
+            },
+            gold: {
+              100: '#fef7dc',
+              200: '#faeec0',
+              300: '#ebd189',
+              400: '#dfb743',
+              500: '#c59b27',
+              600: '#9d7616',
+              700: '#7a5a0c'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+            luxe: ['"Cormorant Garamond"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* iOS & Android Safe Area and Touch Targets */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
+
+    body {
+      background-color: #ffdce5;
+      background-image: 
+        radial-gradient(at 0% 0%, #ffbfd2 0px, transparent 45%),
+        radial-gradient(at 100% 0%, #ecd8ff 0px, transparent 50%),
+        radial-gradient(at 100% 100%, #fed8b1 0px, transparent 45%),
+        radial-gradient(at 0% 100%, #fcd2e9 0px, transparent 45%),
+        radial-gradient(at 50% 50%, #ffe6ee 0px, transparent 60%);
+      background-attachment: fixed;
+      color: #38021e;
+      padding-bottom: calc(78px + var(--sab));
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Prevent mobile input zooming on iOS */
+    @media (max-width: 768px) {
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+    }
+
+    .safe-padding-bottom {
+      padding-bottom: max(16px, var(--sab));
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #b48a27 0%, #dfb743 45%, #92690d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(255, 240, 245, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255, 133, 162, 0.45);
+    }
+
+    .glass-lilac {
+      background: rgba(250, 245, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(192, 132, 252, 0.45);
+    }
+
+    .glass-peach {
+      background: rgba(255, 247, 237, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(254, 215, 170, 0.7);
+    }
+
+    .glass-bar {
+      background: rgba(255, 235, 242, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1.5px solid rgba(255, 112, 150, 0.35);
+    }
+
+    .touch-target {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .touch-press:active {
+      transform: scale(0.97);
+    }
+
+    .product-card.sold-out {
+      filter: saturate(0.65);
+      opacity: 0.88;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden min-h-screen flex flex-col justify-between selection:bg-pink-300 selection:text-pink-900">
+
+
+  <!-- Top Announcement Bar (Nationwide SA Locker Notice) -->
+  <div class="bg-gradient-to-r from-pouch-hot via-purple-700 to-citrus-600 text-white text-xs py-2 px-3 shadow-md relative z-30">
+    <div class="max-w-6xl mx-auto flex items-center justify-between font-semibold flex-wrap gap-1 text-center">
+      <div class="flex items-center gap-1.5 mx-auto md:mx-0">
+        <span>🇿🇦</span>
+        <span class="text-[11px] sm:text-xs">Nationwide South Africa: The Courier Guy / Pudo Locker-to-Locker (R60)</span>
+      </div>
+      <div class="hidden sm:inline-flex items-center gap-1.5 text-xs bg-white/20 px-2.5 py-0.5 rounded-full">
+        <span>Strictly <strong>R60.00 Each The Way It Is!</strong></span>
+      </div>
+      <div class="mx-auto md:mx-0 text-[11px] sm:text-xs text-amber-200 font-extrabold">
+        FREE Locker Delivery on Orders R250+
+      </div>
+    </div>
+  </div>
+
+  <!-- Method 1 Store Owner 1-Click Quick Stock Control Bar -->
+  <aside aria-label="Owner Stock Control" class="bg-[#38021e] text-amber-100 py-2 px-3 border-b border-gold-400 text-xs shadow-inner">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-2 font-bold text-amber-300 text-[11px] sm:text-xs">
+        <i class="fa-solid fa-boxes-packing text-gold-400"></i>
+        <span>Owner Stock Manager:</span>
+        <span class="text-[10px] text-pink-200/80 font-normal hidden sm:inline">(Tap to toggle In Stock vs Sold Out)</span>
+      </div>
+      <div class="flex items-center flex-wrap gap-1.5 justify-center" id="quick-stock-toggles">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Top Header Navigation -->
+  <header class="sticky top-0 z-40 bg-pink-100/95 backdrop-blur-md border-b border-pink-300/60 shadow-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <div class="w-11 h-11 sm:w-13 sm:h-13 rounded-2xl bg-gradient-to-br from-pink-100 to-amber-50 border-2 border-gold-400 p-0.5 flex items-center justify-center shadow-md overflow-hidden shrink-0">
+          <img src="logo_2.jpeg" alt="Righteous Lips Logo" class="w-full h-full object-contain rounded-xl" onerror="this.onerror=null; this.src='logo.jpeg';">
+        </div>
+        <div>
+          <span class="font-luxe text-xl sm:text-2xl font-bold tracking-wider gold-gradient-text uppercase block leading-none">
+            Righteous Lips
+          </span>
+          <span class="font-luxe italic text-[10px] sm:text-xs text-pouch-darkberry tracking-wide block mt-0.5 font-semibold">
+            feel good • look good • be righteous
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden md:flex items-center gap-5 text-xs font-bold text-pouch-darkberry">
+        <a href="#packets-section" class="hover:text-pouch-hot transition flex items-center gap-1">
+          <span>The 4 Packets</span>
+          <span class="text-[10px] bg-pouch-hot text-white font-black px-1.5 py-0.2 rounded-full">R60</span>
+        </a>
+        <a href="#delivery" class="hover:text-emerald-800 transition text-emerald-900">Courier Guy Lockers</a>
+        <a href="#payment-details" class="hover:text-gold-700 transition text-gold-900">Capitec Banking</a>
+      </nav>
+
+      <!-- Cart Button Header -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleCartDrawer(true)" class="touch-target touch-press px-3.5 sm:px-4 rounded-2xl bg-gradient-to-r from-pouch-hot to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-extrabold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+          <div class="relative">
+            <i class="fa-solid fa-bag-shopping text-sm text-amber-200"></i>
+            <span id="header-cart-counter" class="absolute -top-2 -right-2.5 w-4.5 h-4.5 bg-white text-pouch-darkberry text-[10px] font-black rounded-full flex items-center justify-center shadow-xs">0</span>
+          </div>
+          <span id="header-cart-total" class="font-black">R0.00</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-6 pb-8 sm:py-12 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-xl mx-auto mb-4 sm:mb-6">
+      <div class="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-2 p-1 rounded-3xl bg-gradient-to-br from-pink-100 via-purple-50 to-amber-100 border-2 border-gold-400 shadow-md flex items-center justify-center overflow-hidden">
+        <img src="logo_2.jpeg" alt="Righteous Lips Emblem" class="w-full h-full object-contain rounded-2xl" onerror="this.onerror=null; this.src='logo.jpeg';">
+      </div>
+      <div class="font-luxe tracking-[0.2em] text-2xl sm:text-3xl font-bold gold-gradient-text uppercase leading-none">
+        Righteous Lips
+      </div>
+      <div class="font-luxe italic text-xs sm:text-sm text-pouch-darkberry/80 tracking-wider mt-1 font-semibold">
+        feel good • look good • be righteous
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+      
+      <!-- Hero Copy -->
+      <div class="lg:col-span-6 space-y-4 text-center lg:text-left">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-200/90 border border-gold-400 text-gold-900 text-[11px] sm:text-xs font-black shadow-xs">
+          <span>🇿🇦</span>
+          <span>Nationwide South Africa • The Courier Guy Locker</span>
+        </div>
+
+        <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl font-extrabold text-pouch-darkberry leading-tight tracking-tight">
+          4-in-1 Hydrating Lip Goodie Packets. <br>
+          <span class="gold-gradient-text italic font-luxe text-3xl sm:text-5xl">
+            Strictly R60 The Way It Is!
+          </span>
+        </h1>
+
+        <p class="text-pouch-plum text-xs sm:text-sm max-w-md mx-auto lg:mx-0 leading-relaxed font-medium">
+          Every sealed packet contains <strong>4 hydration treats</strong>: Lucky Model 15ml Butter Balm, Miss FactorX Magic Color Lipstick, Citi Girl 10ml pot, satin scrunchie &amp; collectable keychain charm!
+        </p>
+
+        <!-- Touch Quick Pills with Live Stock Status -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 pt-1" id="hero-flavor-pills">
+          <!-- Injected via JavaScript -->
+        </div>
+
+        <!-- Hero Actions -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5">
+          <a href="#packets-section" class="w-full sm:w-auto touch-target touch-press px-6 rounded-2xl bg-gradient-to-r from-pouch-hot to-pink-600 text-white font-extrabold text-xs sm:text-sm shadow-md transition gap-2">
+            <i class="fa-solid fa-bag-shopping text-amber-200"></i>
+            <span>Shop Packets (R60 Each)</span>
+          </a>
+          <button onclick="orderViaWhatsAppDirect()" class="w-full sm:w-auto touch-target touch-press px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md transition gap-2">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>WhatsApp: +27 81 339 8077</span>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-center lg:justify-start gap-3 text-[11px] font-bold text-pouch-darkberry/80 pt-1">
+          <span>📦 Flat R60 Locker Fee</span>
+          <span>•</span>
+          <span class="text-emerald-800 font-black">FREE delivery over R250</span>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase with Interactive Rotator -->
+      <div class="lg:col-span-6">
+        <div class="glass-card p-3.5 sm:p-4 rounded-3xl border-2 border-gold-300 shadow-lg">
+          <div onclick="openCurrentHeroModal()" class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-pink-100 to-purple-100 min-h-[280px] sm:min-h-[340px] flex items-center justify-center cursor-pointer border border-pink-200">
+            <img id="img-hero-display" src="purple.jpeg" alt="Righteous Lips Packet" class="w-full h-64 sm:h-80 object-contain p-2 transition duration-300">
+            
+            <div class="absolute top-2.5 left-2.5 bg-pouch-darkberry/85 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-xs">
+              <span id="hero-badge-title">💜 Sweet Cherry</span> • R60 Each
+            </div>
+
+            <div class="absolute bottom-2 inset-x-2 glass-peach p-2 rounded-xl border border-gold-300 text-center flex items-center justify-between text-xs">
+              <span id="hero-caption" class="font-bold text-pouch-darkberry text-[11px] sm:text-xs truncate pr-1">Sweet Cherry &amp; Blueberry • Flower Tart Charm</span>
+              <span class="px-2.5 py-1 bg-pouch-hot text-white rounded-lg font-bold text-[10px] shrink-0">Tap to Inspect</span>
+            </div>
+          </div>
+
+          <!-- Thumbnails Touch Bar -->
+          <div class="grid grid-cols-4 gap-1.5 mt-2.5">
+            <button onclick="switchHeroDisplay('purple')" class="p-1 rounded-xl border-2 border-purple-400 bg-purple-50 touch-press text-center">
+              <img src="purple.jpeg" class="h-10 sm:h-12 w-full object-contain rounded-md" alt="Purple">
+              <span class="text-[9px] font-bold text-gray-800 block truncate">Purple</span>
+            </button>
+            <button onclick="switchHeroDisplay('pink')" class="p-1 rounded-xl border-2 border-pink-400 bg-pink-50 touch-press text-center">
+              <img src="pink.jpeg" class="h-10 sm:h-12 w-full object-contain rounded-md" alt="Pink">
+              <span class="text-[9px] font-bold text-gray-800 block truncate">Pink</span>
+            </button>
+            <button onclick="switchHeroDisplay('peach')" class="p-1 rounded-xl border-2 border-rose-400 bg-rose-50 touch-press text-center">
+              <img src="peach.jpeg" class="h-10 sm:h-12 w-full object-contain rounded-md" alt="Peach">
+              <span class="text-[9px] font-bold text-gray-800 block truncate">Peach</span>
+            </button>
+            <button onclick="switchHeroDisplay('yellow')" class="p-1 rounded-xl border-2 border-amber-400 bg-amber-50 touch-press text-center">
+              <img src="yellow.jpeg" class="h-10 sm:h-12 w-full object-contain rounded-md" alt="Orange">
+              <span class="text-[9px] font-bold text-gray-800 block truncate">Orange</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- The 4 Packets Section -->
+  <section id="packets-section" class="py-10 sm:py-16 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-xl mx-auto mb-8">
+      <span class="text-[10px] font-black uppercase tracking-wider text-gold-900 bg-gold-200/90 px-3 py-1 rounded-full border border-gold-400">
+        4-in-1 Sealed Goodie Pouches
+      </span>
+      <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-pouch-darkberry mt-1.5">
+        The 4 Lip Goodie Packets (R60 Each)
+      </h2>
+      <p class="text-xs sm:text-sm text-pouch-plum mt-1 font-medium">
+        Sealed in South Africa with 4 hydration items &amp; collectable dessert charms. <em>Tap any packet to inspect!</em>
+      </p>
+    </div>
+
+    <!-- Responsive Grid: 1 col on mobile, 2 col on tablet, 4 col on desktop -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5" id="packets-grid">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- 4 Packets Collector Deal Banner -->
+    <div class="mt-8 bg-gradient-to-r from-pouch-hot via-purple-700 to-citrus-600 rounded-3xl p-5 sm:p-6 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-4 border-2 border-gold-300">
+      <div class="text-center md:text-left space-y-1">
+        <span class="text-[10px] font-black uppercase bg-white/20 px-2.5 py-0.5 rounded-full border border-white/30">Collector Deal 🎁</span>
+        <h3 class="font-serif text-xl sm:text-2xl font-bold">Want All 4 Pouches &amp; Charms?</h3>
+        <p class="text-white/90 text-xs max-w-md font-medium">
+          Get Purple, Pink, Peach, and Orange for <strong>R220.00</strong> (Save R20!).
+        </p>
+      </div>
+      <div class="flex items-center gap-2 w-full md:w-auto">
+        <button onclick="addToCart(5)" class="w-full md:w-auto touch-target touch-press px-6 rounded-2xl bg-white hover:bg-pink-50 text-pouch-darkberry font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-gift text-gold-600"></i>
+          <span>Add All 4 Packets (R220.00)</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- The Courier Guy Nationwide SA Delivery Section -->
+  <section id="delivery" class="py-10 sm:py-16 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="bg-gradient-to-br from-emerald-100/90 via-teal-50/90 to-emerald-100/80 rounded-3xl border-2 border-emerald-300 p-5 sm:p-8 shadow-md">
+      <div class="max-w-2xl mx-auto text-center space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-200 text-emerald-900 text-[10px] font-black uppercase border border-emerald-400">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span>South Africa Only</span>
+        </div>
+        <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-emerald-950">
+          The Courier Guy Locker-to-Locker (Pudo)
+        </h2>
+        <p class="text-xs sm:text-sm text-emerald-900 font-medium">
+          We deliver nationwide across South Africa using The Courier Guy / Pudo smart lockers. Accessible 24/7.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 text-left">
+          <div class="bg-white/85 p-3.5 rounded-2xl border border-emerald-200 shadow-2xs">
+            <div class="w-6 h-6 rounded-full bg-emerald-200 text-emerald-900 font-black flex items-center justify-center text-xs mb-2">1</div>
+            <h4 class="font-bold text-emerald-950 text-xs">Choose Your Locker</h4>
+            <p class="text-[11px] text-emerald-800 mt-0.5">Provide your nearest Courier Guy / Pudo locker name at checkout.</p>
+          </div>
+          <div class="bg-white/85 p-3.5 rounded-2xl border border-emerald-200 shadow-2xs">
+            <div class="w-6 h-6 rounded-full bg-emerald-200 text-emerald-900 font-black flex items-center justify-center text-xs mb-2">2</div>
+            <h4 class="font-bold text-emerald-950 text-xs">SMS OTP PIN</h4>
+            <p class="text-[11px] text-emerald-800 mt-0.5">The Courier Guy SMSes an unlock PIN to your phone upon arrival.</p>
+          </div>
+          <div class="bg-white/85 p-3.5 rounded-2xl border border-emerald-200 shadow-2xs">
+            <div class="w-6 h-6 rounded-full bg-emerald-200 text-emerald-900 font-black flex items-center justify-center text-xs mb-2">3</div>
+            <h4 class="font-bold text-emerald-950 text-xs">Unlock &amp; Collect</h4>
+            <p class="text-[11px] text-emerald-800 mt-0.5">Enter your PIN at the locker touchscreen to retrieve your package.</p>
+          </div>
+        </div>
+
+        <div class="pt-3 flex flex-wrap items-center justify-center gap-2 text-xs font-bold text-emerald-950">
+          <span class="bg-white/90 px-3 py-1.5 rounded-xl border border-emerald-300">
+            Flat Locker Rate: <strong>R60.00</strong>
+          </span>
+          <span class="bg-emerald-700 text-white px-3 py-1.5 rounded-xl">
+            FREE Delivery on Orders R250+
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Capitec Payment Details Card -->
+  <section id="payment-details" class="py-10 sm:py-16 max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-xl mx-auto mb-6">
+      <span class="text-[10px] font-black uppercase tracking-wider text-gold-900 bg-gold-200/90 px-3 py-1 rounded-full border border-gold-400">
+        Official Banking Information
+      </span>
+      <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-pouch-darkberry mt-1.5">
+        Payment Details 💕
+      </h2>
+      <p class="text-xs text-pouch-plum mt-1 font-medium">
+        Please make an <strong class="text-pouch-hot italic">immediate payment</strong> and send your Proof of Payment (POP) via WhatsApp to <strong class="text-pouch-darkberry">+27 81 339 8077</strong>.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-3xl p-5 sm:p-7 border-2 border-gold-400 shadow-lg">
+      <div class="text-center mb-4">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pouch-hot text-white text-xs font-extrabold shadow-2xs">
+          <i class="fa-solid fa-building-columns text-amber-200"></i>
+          <span>Capitec Bank Information</span>
+        </div>
+      </div>
+
+      <!-- Rows with Mobile 1-Click Copy Buttons -->
+      <div class="space-y-2.5 text-xs bg-white/85 p-4 rounded-2xl border border-pink-200 shadow-xs">
+        
+        <div class="flex items-center justify-between py-1.5 border-b border-dashed border-pink-200">
+          <div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase">Account holder</div>
+            <div class="font-bold text-gray-900 text-sm">Miss M Oluga</div>
+          </div>
+          <button onclick="copyToClipboardText('Miss M Oluga', 'Account Holder')" class="touch-target touch-press px-3 text-xs font-bold text-pouch-hot bg-pink-50 hover:bg-pink-100 rounded-lg border border-pink-300">
+            Copy
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between py-1.5 border-b border-dashed border-pink-200">
+          <div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase">Account number</div>
+            <div class="font-mono font-black text-pouch-hot text-base tracking-wider">2101932039</div>
+          </div>
+          <button onclick="copyToClipboardText('2101932039', 'Account Number')" class="touch-target touch-press px-3 text-xs font-bold text-pouch-hot bg-pink-50 hover:bg-pink-100 rounded-lg border border-pink-300">
+            Copy
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between py-1.5 border-b border-dashed border-pink-200">
+          <div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase">Bank</div>
+            <div class="font-bold text-gray-900 text-sm">Capitec</div>
+          </div>
+          <span class="text-[10px] font-black text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">Verified</span>
+        </div>
+
+        <div class="flex items-center justify-between py-1.5 border-b border-dashed border-pink-200">
+          <div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase">PayShap ID</div>
+            <div class="font-bold text-gray-900 text-xs">0813398077@capitec</div>
+          </div>
+          <button onclick="copyToClipboardText('0813398077@capitec', 'PayShap ID')" class="touch-target touch-press px-3 text-xs font-bold text-purple-700 bg-purple-50 hover:bg-purple-100 rounded-lg border border-purple-200">
+            Copy
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between py-1.5 border-b border-dashed border-pink-200">
+          <div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase">WhatsApp Orders Only</div>
+            <div class="font-bold text-emerald-800 text-sm">+27 81 339 8077</div>
+          </div>
+          <button onclick="orderViaWhatsAppDirect()" class="touch-target touch-press px-3 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg">
+            Chat
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between py-1.5">
+          <div>
+            <div class="text-[10px] text-gray-500 font-bold uppercase">Reference</div>
+            <div class="font-bold text-gray-900 text-xs">Your Name</div>
+          </div>
+          <span class="text-[10px] text-gray-500 italic">e.g. Lerato M</span>
+        </div>
+
+      </div>
+
+      <!-- Notices -->
+      <div class="mt-3 p-3 bg-amber-100/90 rounded-2xl border border-amber-300 text-center text-xs text-amber-950 font-semibold">
+        Please make an <strong class="text-pouch-hot italic">immediate payment</strong> and send your POP via WhatsApp to <strong class="text-emerald-800">+27 81 339 8077</strong> once completed ♡
+      </div>
+
+      <div class="mt-2.5 p-3 bg-rose-100/90 rounded-2xl border border-rose-300 flex items-start gap-2 text-left">
+        <span class="text-sm">⚠</span>
+        <div class="text-[11px] text-rose-950 leading-snug font-medium">
+          <strong class="font-black uppercase">Please Note:</strong> If it's an <strong>ATM deposit</strong> an extra <strong>R10</strong> will be required so that we receive the full amount 🌸
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-[#2b0318] to-[#12000b] text-white pt-10 pb-16 border-t-4 border-gold-400">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center space-y-4">
+      <div class="w-16 h-16 mx-auto p-1 rounded-2xl bg-gradient-to-br from-pink-100 to-amber-100 border border-gold-300 shadow-md flex items-center justify-center overflow-hidden">
+        <img src="logo_2.jpeg" alt="Righteous Lips Emblem" class="w-full h-full object-contain rounded-xl" onerror="this.onerror=null; this.src='logo.jpeg';">
+      </div>
+      <div class="font-luxe tracking-[0.2em] text-2xl font-bold gold-gradient-text uppercase leading-none">
+        Righteous Lips
+      </div>
+      <div class="font-luxe italic text-xs text-pink-200 font-semibold">
+        feel good • look good • be righteous
+      </div>
+      <p class="text-[11px] text-pink-200/70 max-w-md mx-auto">
+        South African lip care goodie packets &amp; charm butter balms. Strictly R60 each. Delivered via The Courier Guy / Pudo lockers.
+      </p>
+
+      <div class="pt-4 border-t border-pink-900/50 text-[10px] text-pink-300/60">
+        &copy; 2026 Righteous Lips South Africa. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE ERGONOMIC STICKY BOTTOM ACTION BAR (iPhone & Android) -->
+  <nav aria-label="Mobile Bottom Navigation" class="fixed bottom-0 inset-x-0 z-40 md:hidden glass-bar shadow-2xl safe-padding-bottom">
+    <div class="grid grid-cols-4 items-center h-16 px-2 text-center text-[10px] font-bold text-pouch-darkberry">
+      
+      <a href="#packets-section" class="flex flex-col items-center justify-center py-1 touch-press">
+        <i class="fa-solid fa-sparkles text-pouch-hot text-base"></i>
+        <span class="mt-0.5">Packets</span>
+      </a>
+
+      <a href="#payment-details" class="flex flex-col items-center justify-center py-1 touch-press">
+        <i class="fa-solid fa-building-columns text-gold-600 text-base"></i>
+        <span class="mt-0.5">Banking</span>
+      </a>
+
+      <button onclick="orderViaWhatsAppDirect()" class="flex flex-col items-center justify-center py-1 touch-press text-emerald-700">
+        <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+        <span class="mt-0.5">WhatsApp</span>
+      </button>
+
+      <button onclick="toggleCartDrawer(true)" class="relative flex flex-col items-center justify-center py-1 touch-press">
+        <div class="relative">
+          <i class="fa-solid fa-bag-shopping text-pouch-hot text-base"></i>
+          <span id="bottom-cart-counter" class="absolute -top-1.5 -right-2.5 bg-pouch-hot text-white text-[9px] font-black rounded-full w-4 h-4 flex items-center justify-center">0</span>
+        </div>
+        <span id="bottom-cart-total" class="mt-0.5 text-pouch-hot font-black">R0.00</span>
+      </button>
+
+    </div>
+  </nav>
+
+
+  <!-- Mobile Bottom Sheet / Desktop Drawer Cart -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+    <div id="cart-backdrop" onclick="toggleCartDrawer(false)" class="absolute inset-0 bg-[#2b0318]/70 backdrop-blur-xs transition-opacity"></div>
+
+    <div class="fixed inset-x-0 bottom-0 md:inset-y-0 md:left-auto md:right-0 max-w-full flex">
+      <div id="cart-panel" class="w-full md:w-screen md:max-w-md max-h-[90vh] md:max-h-full rounded-t-3xl md:rounded-none bg-gradient-to-b from-[#fff2f6] to-[#fcf0f7] shadow-2xl flex flex-col pointer-events-auto transform translate-y-full md:translate-y-0 md:translate-x-full transition duration-300 ease-in-out border-t-2 md:border-t-0 md:border-l-2 border-gold-300 safe-padding-bottom">
+        
+        <!-- Sheet Handle for Mobile Drag Hint -->
+        <div class="w-12 h-1.5 bg-pink-300 rounded-full mx-auto mt-2.5 md:hidden"></div>
+
+        <div class="p-4 border-b border-pink-200 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-md bg-gold-200 text-gold-900 border border-gold-400 text-xs font-bold flex items-center justify-center">RL</span>
+            <h3 class="font-serif text-base font-bold text-pouch-darkberry">Righteous Lips Bag</h3>
+          </div>
+          <button onclick="toggleCartDrawer(false)" class="touch-target touch-press px-2 text-pouch-darkberry" aria-label="Close Bag">
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <!-- Free shipping bar -->
+        <div class="px-4 py-2 bg-gold-200/90 border-b border-gold-300">
+          <div class="flex justify-between items-center text-[11px] font-bold text-gold-950 mb-1">
+            <span id="shipping-progress-text">Add R190 for FREE Delivery!</span>
+            <span id="shipping-percentage-text" class="text-emerald-800 font-black">24%</span>
+          </div>
+          <div class="w-full bg-white/80 rounded-full h-1.5 overflow-hidden">
+            <div id="shipping-progress-bar" class="bg-gradient-to-r from-gold-500 to-emerald-500 h-1.5 rounded-full" style="width: 24%"></div>
+          </div>
+        </div>
+
+        <!-- Items Container -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-2.5">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Totals & Actions -->
+        <div class="p-4 border-t border-pink-200 bg-pink-50/90 space-y-2.5">
+          <div class="space-y-1 text-xs text-gray-700 font-medium">
+            <div class="flex justify-between">
+              <span>Items Subtotal:</span>
+              <span id="cart-subtotal" class="font-bold text-gray-900">R0.00</span>
+            </div>
+            <div class="flex justify-between">
+              <span>The Courier Guy Locker (SA):</span>
+              <span id="cart-shipping" class="font-bold text-gray-900">R60.00</span>
+            </div>
+            <div class="flex justify-between text-base font-bold text-gray-900 pt-1.5 border-t border-pink-200">
+              <span>Total Payable:</span>
+              <span id="cart-total" class="text-pouch-hot font-black text-lg">R0.00</span>
+            </div>
+          </div>
+
+          <button onclick="triggerCheckoutModal()" class="w-full touch-target touch-press rounded-2xl bg-gradient-to-r from-pouch-hot to-purple-600 text-white font-extrabold text-xs sm:text-sm shadow-md gap-2">
+            <i class="fa-solid fa-lock text-xs"></i>
+            <span>Enter Locker &amp; Checkout</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Checkout Modal -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen px-3 py-6 safe-padding-bottom">
+      <div onclick="closeCheckoutModal()" class="fixed inset-0 bg-[#2b0318]/80 backdrop-blur-xs"></div>
+
+      <div class="relative bg-gradient-to-br from-[#fff2f6] to-[#fbf2ff] rounded-3xl max-w-lg w-full p-5 sm:p-7 text-left shadow-2xl z-10 border-2 border-gold-400 space-y-3.5">
+        <button onclick="closeCheckoutModal()" class="absolute top-3.5 right-3.5 touch-target px-2 text-gray-500 hover:text-gray-700">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+        <div class="text-center pb-1">
+          <div class="w-10 h-10 bg-emerald-100 text-emerald-800 rounded-xl mx-auto flex items-center justify-center mb-1.5 text-lg font-bold border border-emerald-300">
+            🚚
+          </div>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-pouch-darkberry">Courier Guy Locker Checkout</h3>
+          <p class="text-[11px] text-pouch-plum mt-0.5 font-medium">
+            Enter your cellphone number so The Courier Guy can SMS you the unlock PIN.
+          </p>
+        </div>
+
+        <form id="checkout-form" onsubmit="handleFinalOrder(event)" class="space-y-3">
+          
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="text-[10px] font-bold text-gray-700 uppercase">First Name *</label>
+              <input type="text" id="cust-first-name" required placeholder="Lerato" maxlength="50" class="w-full text-xs px-3 py-2.5 rounded-xl bg-white/95 border border-pink-300 focus:outline-none focus:border-gold-500">
+            </div>
+            <div>
+              <label class="text-[10px] font-bold text-gray-700 uppercase">Last Name *</label>
+              <input type="text" id="cust-last-name" required placeholder="Khumalo" maxlength="50" class="w-full text-xs px-3 py-2.5 rounded-xl bg-white/95 border border-pink-300 focus:outline-none focus:border-gold-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="text-[10px] font-bold text-gray-700 uppercase">SA Cellphone * (For Locker SMS PIN)</label>
+            <input type="tel" id="cust-phone" required placeholder="081 339 8077" maxlength="15" class="w-full text-xs px-3 py-2.5 rounded-xl bg-white/95 border border-pink-300 focus:outline-none focus:border-gold-500">
+            <span id="phone-error" class="text-[10px] text-red-600 font-bold hidden mt-0.5 block">Enter a valid 10-digit South African cellphone number.</span>
+          </div>
+
+          <div class="bg-pink-100/70 p-3 rounded-2xl border border-pink-300 space-y-2">
+            <div>
+              <label class="text-[10px] font-bold text-emerald-900 uppercase flex items-center gap-1">
+                <i class="fa-solid fa-map-pin text-emerald-700"></i>
+                <span>Courier Guy / Pudo Locker Name *</span>
+              </label>
+              <input type="text" id="cust-locker-name" required placeholder="e.g. Total Garage Sandton / Menlyn Pudo" maxlength="80" class="w-full text-xs px-3 py-2 bg-white rounded-xl border border-pink-300 focus:outline-none focus:border-gold-500 mt-0.5">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="text-[10px] font-bold text-gray-700 uppercase">City / Suburb *</label>
+                <input type="text" id="cust-city" required placeholder="Johannesburg" maxlength="50" class="w-full text-xs px-2.5 py-1.5 bg-white rounded-xl border border-pink-300 focus:outline-none focus:border-gold-500">
+              </div>
+              <div>
+                <label class="text-[10px] font-bold text-gray-700 uppercase">Province (SA) *</label>
+                <select id="cust-province" class="w-full text-xs px-2.5 py-1.5 bg-white rounded-xl border border-pink-300 focus:outline-none focus:border-gold-500 font-medium">
+                  <option value="Gauteng">Gauteng</option>
+                  <option value="Western Cape">Western Cape</option>
+                  <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                  <option value="Eastern Cape">Eastern Cape</option>
+                  <option value="Free State">Free State</option>
+                  <option value="Mpumalanga">Mpumalanga</option>
+                  <option value="Limpopo">Limpopo</option>
+                  <option value="North West">North West</option>
+                  <option value="Northern Cape">Northern Cape</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2.5 bg-white/80 rounded-2xl text-xs space-y-1 border border-pink-200">
+            <div class="flex justify-between text-gray-700">
+              <span>Items Subtotal:</span>
+              <span id="modal-subtotal" class="font-bold">R0.00</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span>Courier Guy Locker:</span>
+              <span id="modal-shipping" class="font-bold">R60.00</span>
+            </div>
+            <div class="flex justify-between font-black text-sm text-pouch-darkberry pt-1 border-t border-pink-200">
+              <span>Total Payable:</span>
+              <span id="modal-total" class="text-pouch-hot font-black">R0.00</span>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full touch-target touch-press rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-md gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Send Order to WhatsApp (+27 81 339 8077)</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quick-View Modal -->
+  <div id="product-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen px-3 py-6 safe-padding-bottom">
+      <div onclick="closeProductModal()" class="fixed inset-0 bg-[#2b0318]/80 backdrop-blur-xs"></div>
+
+      <div class="relative bg-gradient-to-br from-[#fff2f6] to-[#fbf2ff] rounded-3xl max-w-2xl w-full p-4 sm:p-6 text-left shadow-2xl z-10 border-2 border-gold-400 space-y-3">
+        
+        <div class="flex items-center justify-between border-b border-pink-200 pb-2">
+          <span class="font-serif font-bold text-pouch-darkberry text-sm sm:text-base" id="modal-product-title">Product Details</span>
+          <button onclick="closeProductModal()" class="touch-target px-2 text-pouch-darkberry">
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+          <div class="relative rounded-2xl overflow-hidden bg-white/70 border border-gold-300 p-2 flex items-center justify-center min-h-[220px]">
+            <img id="modal-img-view" src="purple.jpeg" alt="Product Detail" class="max-h-[240px] w-auto mx-auto object-contain">
+            <div id="modal-sold-out-overlay" class="absolute inset-0 bg-black/60 flex items-center justify-center hidden">
+              <span class="bg-rose-900 text-rose-100 text-xs font-black uppercase px-3 py-1.5 rounded-xl border border-rose-400">
+                Sold Out / Restocking Soon
+              </span>
+            </div>
+          </div>
+
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span id="modal-badge" class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-gold-200 text-gold-900 border border-gold-400">
+                Sealed Pouch
+              </span>
+              <span id="modal-price" class="text-xl font-black text-pouch-hot">R60.00</span>
+            </div>
+
+            <h3 id="modal-name" class="font-serif text-lg font-bold text-pouch-darkberry leading-tight">
+              Packet Name
+            </h3>
+
+            <div class="bg-white/80 p-3 rounded-2xl border border-pink-300 text-xs text-gray-800 space-y-1">
+              <div class="font-bold text-pouch-darkberry text-[11px]">4 Items Sealed Inside:</div>
+              <ul id="modal-contents-list" class="space-y-1 pl-1 text-[11px] font-medium"></ul>
+            </div>
+
+            <div id="modal-action-container" class="pt-1"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Backup Modal (Popup Blocker Protection) -->
+  <div id="order-success-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen px-3 py-6 safe-padding-bottom">
+      <div onclick="closeSuccessModal()" class="fixed inset-0 bg-[#2b0318]/80 backdrop-blur-xs"></div>
+
+      <div class="relative bg-gradient-to-br from-[#fff2f6] to-[#fbf2ff] rounded-3xl max-w-md w-full p-5 sm:p-6 text-left shadow-2xl z-10 border-2 border-emerald-400 space-y-3">
+        <div class="text-center">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-xl mb-1 border border-emerald-300">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-pouch-darkberry">Order Ready to Send!</h3>
+          <p class="text-[11px] text-pouch-plum font-medium">Tap below to open WhatsApp or copy the order details.</p>
+        </div>
+
+        <div class="bg-white/90 p-3 rounded-2xl border border-pink-300 text-[11px] font-mono text-gray-900 max-h-40 overflow-y-auto whitespace-pre-wrap select-all" id="order-preview-box"></div>
+
+        <div class="space-y-2 pt-1">
+          <a id="direct-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full touch-target touch-press rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md gap-2">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Open WhatsApp (+27 81 339 8077)</span>
+          </a>
+          <button onclick="copyOrderText()" class="w-full touch-target touch-press rounded-2xl bg-gold-200 hover:bg-gold-300 text-gold-900 font-bold text-xs border border-gold-400 gap-1.5">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Order Details</span>
+          </button>
+        </div>
+
+        <div class="text-center pt-1">
+          <button onclick="closeSuccessModal()" class="text-xs text-gray-600 hover:text-gray-900 font-bold underline">
+            Close &amp; Keep Browsing
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-20 right-4 left-4 sm:left-auto sm:w-80 z-50 bg-pouch-darkberry text-white px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2 transform -translate-y-20 opacity-0 transition duration-300 pointer-events-none text-xs font-bold border border-gold-400">
+    <span class="text-amber-300">✨</span>
+    <span id="toast-message" class="truncate">Item updated!</span>
+  </div>
+
+
+  <script>
+    const SA_LOCKER_FEE = 60;
+    const FREE_LOCKER_THRESHOLD = 250;
+    const WHATSAPP_NUMBER = '27813398077';
+    let lastOrderTimestamp = 0;
+
+    // PRODUCTS CATALOG WITH EXACT CORRESPONDING FILENAMES
+    const packets = [
+      {
+        id: 1,
+        key: 'purple',
+        imgFile: 'purple.jpeg',
+        name: 'Sweet Cherry & Blueberry Packet (Purple)',
+        shortName: 'Purple Packet',
+        price: 60.00,
+        inStock: true,
+        badge: 'Purple 💜',
+        flavor: 'Sweet Cherry & Blueberry',
+        charm: 'Violet Blossom Tart Charm',
+        glassClass: 'glass-lilac',
+        borderColor: 'border-purple-400',
+        badgeBg: 'bg-purple-200 text-purple-950 font-bold',
+        items: [
+          'Lucky Model Lip Butter Balm 15ml (Lilac Tube)',
+          'Miss FactorX Sweet Cherry Magic Color Lipstick',
+          'Citi Girl Blueberry Cheesecake Pot 10ml',
+          'Lavender Satin Silk Hair Scrunchie',
+          'Violet Blossom Flower Tart Charm Keychain'
+        ]
+      },
+      {
+        id: 2,
+        key: 'pink',
+        imgFile: 'pink.jpeg',
+        name: 'Sweet Peach Packet (Pink with Donut Charm)',
+        shortName: 'Pink Packet',
+        price: 60.00,
+        inStock: true,
+        badge: 'Pink 🍩',
+        flavor: 'Sweet Peach & Bubblegum',
+        charm: 'Red Glazed Jelly Donut Ring Tart Charm',
+        glassClass: 'glass-card',
+        borderColor: 'border-pink-400',
+        badgeBg: 'bg-pink-200 text-pink-950 font-bold',
+        items: [
+          'Lucky Model Lip Butter Balm 15ml (Baby Pink Tube)',
+          'Miss FactorX Sweet Peach Magic Color Lipstick',
+          'Citi Girl Candy Floss Pot 10ml',
+          'Baby Pink Satin Silk Hair Scrunchie',
+          'Red Glazed Jelly Donut Ring Tart Charm Keychain'
+        ]
+      },
+      {
+        id: 3,
+        key: 'peach',
+        imgFile: 'peach.jpeg',
+        name: 'Sweet Strawberry Packet (Peach with Shortcake Charm)',
+        shortName: 'Peach Packet',
+        price: 60.00,
+        inStock: true,
+        badge: 'Peach 🍰',
+        flavor: 'Sweet Strawberry & Candy Floss',
+        charm: 'Strawberry Shortcake & Choc Charm',
+        glassClass: 'glass-card',
+        borderColor: 'border-rose-400',
+        badgeBg: 'bg-rose-200 text-rose-950 font-bold',
+        items: [
+          'Lucky Model Lip Butter Balm 15ml (Deep Rose Tube)',
+          'Miss FactorX Sweet Strawberry Magic Color Lipstick',
+          'Citi Girl Candy Floss Pot 10ml',
+          'Pastel Pink Satin Silk Hair Scrunchie',
+          'Strawberry Shortcake & Choc Slice Charm Keychain'
+        ]
+      },
+      {
+        id: 4,
+        key: 'yellow',
+        imgFile: 'yellow.jpeg',
+        name: 'Sweet Orange & Citrus Packet (Yellow with Cheese Charm)',
+        shortName: 'Orange Packet',
+        price: 60.00,
+        inStock: true,
+        badge: 'Orange 🧀',
+        flavor: 'Lemon Meringue & Sweet Orange',
+        charm: 'Swiss Cheese Wedge Charm',
+        glassClass: 'glass-peach',
+        borderColor: 'border-amber-400',
+        badgeBg: 'bg-amber-200 text-amber-950 font-bold',
+        items: [
+          'Lucky Model Lip Butter Balm 15ml (Honey Custard Tube)',
+          'Miss FactorX Sweet Orange Magic Color Lipstick',
+          'Citi Girl Lemon Meringue Pot 10ml',
+          'Peach Satin Silk Hair Scrunchie',
+          'Honeycomb Swiss Cheese Wedge Charm Keychain'
+        ]
+      }
+    ];
+
+    let currentHeroKey = 'purple';
+    let cart = [];
+    let activeGeneratedMessage = '';
+
+    // Initialize Method 1 Stock State from LocalStorage
+    function initStockState() {
+      packets.forEach(p => {
+        const saved = localStorage.getItem(`stock_packet_${p.id}`);
+        if (saved !== null) p.inStock = saved === 'true';
+      });
+    }
+
+    function toggleStock(id) {
+      const item = packets.find(p => p.id === id);
+      if (!item) return;
+
+      item.inStock = !item.inStock;
+      localStorage.setItem(`stock_packet_${id}`, item.inStock);
+
+      if (!item.inStock) {
+        cart = cart.filter(c => c.id !== id);
+        updateCart();
+      }
+
+      showToast(`${item.name} is now ${item.inStock ? 'IN STOCK' : 'OUT OF STOCK'}`);
+      renderAllViews();
+    }
+
+    function formatRands(amount) {
+      return `R${amount.toFixed(2)}`;
+    }
+
+    function sanitizeInput(text) {
+      const div = document.createElement('div');
+      div.textContent = text || '';
+      return div.innerHTML.replace(/[<>'"]/g, '');
+    }
+
+    function isValidSAPhone(phone) {
+      const clean = phone.replace(/[^0-9]/g, '');
+      return (clean.length === 10 && clean.startsWith('0')) || (clean.length === 11 && clean.startsWith('27'));
+    }
+
+    function notifyWhenRestocked(productName) {
+      const msg = `Hi Righteous Lips! 👋 Please let me know when "${productName}" is back in stock so I can place my order!`;
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    function renderHeroPills() {
+      const container = document.getElementById('hero-flavor-pills');
+      container.innerHTML = packets.map(p => `
+        <button onclick="openProductModal(${p.id})" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-black ${p.inStock ? 'bg-pink-100 text-pink-950 border border-pink-300' : 'bg-rose-950 text-rose-200 border border-rose-800'} transition touch-press">
+          <span class="w-2 h-2 rounded-full ${p.inStock ? 'bg-emerald-500' : 'bg-red-500'}"></span>
+          <span>${p.shortName}</span>
+          ${!p.inStock ? '<span class="text-[9px] uppercase tracking-wider text-amber-300">Sold Out</span>' : ''}
+        </button>
+      `).join('');
+    }
+
+    function renderStockToggles() {
+      const container = document.getElementById('quick-stock-toggles');
+      container.innerHTML = packets.map(p => `
+        <button onclick="toggleStock(${p.id})" class="px-2 py-0.5 rounded-lg font-bold text-[10px] sm:text-[11px] transition flex items-center gap-1 ${p.inStock ? 'bg-emerald-700 hover:bg-emerald-600 text-white' : 'bg-rose-800 hover:bg-rose-700 text-rose-100'} touch-press">
+          <span class="w-1.5 h-1.5 rounded-full ${p.inStock ? 'bg-emerald-300' : 'bg-red-300'}"></span>
+          <span>${p.shortName}: ${p.inStock ? 'In Stock' : 'Sold Out'}</span>
+        </button>
+      `).join('');
+    }
+
+    function renderPacketsGrid() {
+      const container = document.getElementById('packets-grid');
+      container.innerHTML = packets.map(p => {
+        const isSoldOut = !p.inStock;
+
+        return `
+          <div class="${p.glassClass} rounded-3xl p-4 border-2 ${p.borderColor} shadow-sm hover:shadow-md transition flex flex-col justify-between product-card ${isSoldOut ? 'sold-out' : ''}">
+            <div>
+              <div onclick="openProductModal(${p.id})" class="relative rounded-2xl overflow-hidden bg-white/60 mb-3 h-52 cursor-pointer border border-pink-200 flex items-center justify-center p-2">
+                <img src="${p.imgFile}" alt="${p.name}" class="w-full h-full object-contain ${isSoldOut ? 'grayscale-40' : ''}">
+                
+                ${isSoldOut ? `
+                  <div class="absolute inset-0 bg-black/60 backdrop-blur-2xs flex flex-col items-center justify-center p-2 text-center z-10">
+                    <span class="bg-rose-900 text-rose-100 text-[10px] font-black uppercase px-2.5 py-1 rounded-full border border-rose-400 tracking-wider shadow-md mb-1">
+                      Sold Out
+                    </span>
+                    <span class="text-[10px] text-pink-200 font-semibold">Tap to notify</span>
+                  </div>
+                ` : `
+                  <span class="absolute top-2 left-2 bg-pouch-hot text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow-2xs">
+                    R60 EACH
+                  </span>
+                  <span class="absolute bottom-2 right-2 bg-white/90 text-[10px] font-black text-pouch-darkberry px-2 py-0.5 rounded-md shadow-2xs border border-pink-300">
+                    ${p.charm.split(' ')[0]} Charm ✨
+                  </span>
+                `}
+              </div>
+
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full ${p.badgeBg}">${p.badge}</div>
+                ${isSoldOut ? '<span class="text-[9px] font-black text-red-600 bg-red-100 px-1.5 py-0.2 rounded-full uppercase">Sold Out</span>' : '<span class="text-[9px] font-bold text-emerald-700 bg-emerald-100 px-1.5 py-0.2 rounded-full uppercase">In Stock</span>'}
+              </div>
+
+              <h3 onclick="openProductModal(${p.id})" class="font-serif text-base font-bold text-pouch-darkberry mt-0.5 leading-snug cursor-pointer">${p.name}</h3>
+              <div class="text-[11px] font-bold text-pouch-plum mt-0.5">${p.flavor}</div>
+              <div class="text-[11px] text-gray-700 mt-1 font-medium">• ${p.charm}</div>
+            </div>
+
+            <div class="pt-3 mt-3 border-t border-pink-300/60">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-base font-black text-pouch-darkberry">${formatRands(p.price)}</span>
+                <span class="text-[10px] text-gray-600 font-bold">4-in-1 Pouch</span>
+              </div>
+
+              ${isSoldOut ? `
+                <button onclick="notifyWhenRestocked('${p.name}')" class="w-full touch-target touch-press rounded-xl bg-gradient-to-r from-rose-950 to-purple-950 text-amber-200 font-bold text-xs shadow-2xs transition gap-1.5 border border-amber-400/40">
+                  <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                  <span>Notify When Restocked</span>
+                </button>
+              ` : `
+                <div class="flex items-center gap-1.5">
+                  <button onclick="openProductModal(${p.id})" class="touch-target touch-press px-3 rounded-xl bg-white text-pouch-darkberry text-xs font-bold border border-pink-300" title="Inspect">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button onclick="addToCart(${p.id})" class="flex-1 touch-target touch-press rounded-xl bg-gradient-to-r from-pouch-hot to-purple-600 text-white text-xs font-bold shadow-2xs gap-1.5">
+                    <i class="fa-solid fa-plus text-xs"></i>
+                    <span>Add to Bag (R${p.price})</span>
+                  </button>
+                </div>
+              `}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openProductModal(target) {
+      const modal = document.getElementById('product-modal');
+      const imgView = document.getElementById('modal-img-view');
+      const title = document.getElementById('modal-product-title');
+      const name = document.getElementById('modal-name');
+      const price = document.getElementById('modal-price');
+      const badge = document.getElementById('modal-badge');
+      const list = document.getElementById('modal-contents-list');
+      const actionBox = document.getElementById('modal-action-container');
+      const soldOutOverlay = document.getElementById('modal-sold-out-overlay');
+
+      soldOutOverlay.classList.add('hidden');
+
+      if (target === 5) {
+        imgView.src = 'purple.jpeg';
+        title.innerText = 'All 4 Packets Bundle';
+        name.innerText = 'Complete Righteous Lips Quartet';
+        price.innerText = 'R220.00';
+        badge.innerText = 'Collector Bundle';
+        list.innerHTML = `
+          <li>• 1x Purple Packet (Sweet Cherry &amp; Flower Charm)</li>
+          <li>• 1x Pink Packet (Sweet Peach &amp; Donut Charm)</li>
+          <li>• 1x Peach Packet (Sweet Strawberry &amp; Shortcake Charm)</li>
+          <li>• 1x Orange Packet (Sweet Orange &amp; Cheese Charm)</li>
+        `;
+        actionBox.innerHTML = `
+          <button onclick="addToCart(5); closeProductModal();" class="w-full touch-target touch-press rounded-2xl bg-gradient-to-r from-pouch-hot to-purple-600 text-white font-extrabold text-xs shadow-md gap-2">
+            <i class="fa-solid fa-bag-shopping text-amber-200"></i>
+            <span>Add Bundle (R220.00)</span>
+          </button>
+        `;
+      } else {
+        const item = packets.find(p => p.id === target) || packets[0];
+
+        imgView.src = item.imgFile;
+        title.innerText = item.name;
+        name.innerText = item.name;
+        price.innerText = formatRands(item.price);
+        badge.innerText = item.badge;
+        list.innerHTML = item.items.map(it => `<li>• ${it}</li>`).join('');
+
+        if (!item.inStock) {
+          soldOutOverlay.classList.remove('hidden');
+          actionBox.innerHTML = `
+            <button onclick="notifyWhenRestocked('${item.name}')" class="w-full touch-target touch-press rounded-2xl bg-emerald-600 text-white font-extrabold text-xs shadow-md gap-2">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+              <span>Notify Me on WhatsApp When Restocked</span>
+            </button>
+          `;
+        } else {
+          actionBox.innerHTML = `
+            <button onclick="addToCart(${item.id}); closeProductModal();" class="w-full touch-target touch-press rounded-2xl bg-gradient-to-r from-pouch-hot to-purple-600 text-white font-extrabold text-xs shadow-md gap-2">
+              <i class="fa-solid fa-bag-shopping text-amber-200"></i>
+              <span>Add to Bag (${formatRands(item.price)})</span>
+            </button>
+          `;
+        }
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeProductModal() {
+      document.getElementById('product-modal').classList.add('hidden');
+    }
+
+    function switchHeroDisplay(key) {
+      currentHeroKey = key;
+      const displayImg = document.getElementById('img-hero-display');
+      const badge = document.getElementById('hero-badge-title');
+      const caption = document.getElementById('hero-caption');
+
+      if (key === 'purple') {
+        displayImg.src = 'purple.jpeg';
+        badge.innerText = '💜 Sweet Cherry';
+        caption.innerText = 'Sweet Cherry & Blueberry • Flower Tart Charm';
+      } else if (key === 'pink') {
+        displayImg.src = 'pink.jpeg';
+        badge.innerText = '💗 Sweet Peach';
+        caption.innerText = 'Sweet Peach & Bubblegum • Donut Ring Charm';
+      } else if (key === 'peach') {
+        displayImg.src = 'peach.jpeg';
+        badge.innerText = '🍑 Sweet Strawberry';
+        caption.innerText = 'Sweet Strawberry & Candy Floss • Shortcake Charm';
+      } else if (key === 'yellow') {
+        displayImg.src = 'yellow.jpeg';
+        badge.innerText = '🧀 Sweet Orange';
+        caption.innerText = 'Sweet Orange & Citrus • Cheese Wedge Charm';
+      }
+    }
+
+    function openCurrentHeroModal() {
+      if (currentHeroKey === 'purple') openProductModal(1);
+      else if (currentHeroKey === 'pink') openProductModal(2);
+      else if (currentHeroKey === 'peach') openProductModal(3);
+      else if (currentHeroKey === 'yellow') openProductModal(4);
+    }
+
+    function addToCart(id) {
+      let prod = null;
+      if (id === 5) {
+        prod = { id: 5, name: 'All 4 Packets Bundle', price: 220.00, inStock: true };
+      } else {
+        prod = packets.find(p => p.id === id);
+      }
+      if (!prod) return;
+
+      if (!prod.inStock) {
+        alert(`${prod.name} is currently out of stock!`);
+        return;
+      }
+
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id: prod.id, name: prod.name, price: prod.price, quantity: 1 });
+      }
+
+      updateCart();
+      toggleCartDrawer(true);
+      showToast(`Added ${prod.name}!`);
+    }
+
+    function changeQuantity(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      updateCart();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(i => i.id !== id);
+      updateCart();
+      showToast('Item removed');
+    }
+
+    function updateCart() {
+      const container = document.getElementById('cart-items-container');
+      const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      document.getElementById('header-cart-counter').innerText = totalQty;
+      document.getElementById('header-cart-total').innerText = formatRands(subtotal);
+      document.getElementById('bottom-cart-counter').innerText = totalQty;
+      document.getElementById('bottom-cart-total').innerText = formatRands(subtotal);
+      document.getElementById('cart-subtotal').innerText = formatRands(subtotal);
+
+      const progressText = document.getElementById('shipping-progress-text');
+      const progressBar = document.getElementById('shipping-progress-bar');
+      const percentageText = document.getElementById('shipping-percentage-text');
+      const shippingEl = document.getElementById('cart-shipping');
+      const totalEl = document.getElementById('cart-total');
+
+      let shippingFee = subtotal === 0 ? 0 : SA_LOCKER_FEE;
+
+      if (subtotal >= FREE_LOCKER_THRESHOLD) {
+        shippingFee = 0;
+        progressText.innerHTML = `🎉 <strong>FREE Courier Guy Locker Delivery!</strong>`;
+        progressBar.style.width = '100%';
+        percentageText.innerText = '100%';
+        shippingEl.innerText = 'FREE';
+        shippingEl.className = 'font-black text-emerald-700';
+      } else {
+        const remaining = FREE_LOCKER_THRESHOLD - subtotal;
+        const percent = Math.min(100, Math.round((subtotal / FREE_LOCKER_THRESHOLD) * 100));
+        progressText.innerText = `Add ${formatRands(remaining)} for FREE Delivery!`;
+        progressBar.style.width = `${percent}%`;
+        percentageText.innerText = `${percent}%`;
+        shippingEl.innerText = subtotal === 0 ? formatRands(0) : formatRands(SA_LOCKER_FEE);
+        shippingEl.className = 'font-bold text-gray-900';
+      }
+
+      const finalTotal = subtotal + shippingFee;
+      totalEl.innerText = formatRands(finalTotal);
+
+      const modalSubtotal = document.getElementById('modal-subtotal');
+      const modalShipping = document.getElementById('modal-shipping');
+      const modalTotal = document.getElementById('modal-total');
+      if (modalSubtotal) modalSubtotal.innerText = formatRands(subtotal);
+      if (modalShipping) modalShipping.innerText = shippingFee === 0 ? 'FREE' : formatRands(SA_LOCKER_FEE);
+      if (modalTotal) modalTotal.innerText = formatRands(finalTotal);
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-10 text-gray-500 space-y-1">
+            <div class="text-2xl">🛍️</div>
+            <p class="font-bold text-pouch-darkberry text-xs">Your bag is empty</p>
+            <p class="text-[11px]">Pick any R60 Goodie Packet to begin!</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = cart.map(item => `
+          <div class="bg-white/90 p-2.5 rounded-2xl border border-pink-200 flex items-center justify-between gap-2 shadow-2xs">
+            <div class="flex-1 min-w-0">
+              <div class="text-xs font-bold text-gray-900 truncate">${item.name}</div>
+              <div class="text-xs font-black text-pouch-hot">${formatRands(item.price)}</div>
+            </div>
+            
+            <div class="flex items-center gap-1.5 bg-pink-50 px-2 py-0.5 rounded-xl border border-pink-200">
+              <button onclick="changeQuantity(${item.id}, -1)" class="text-gray-600 font-bold px-1 text-xs touch-press">-</button>
+              <span class="text-xs font-bold text-gray-800 min-w-[14px] text-center">${item.quantity}</span>
+              <button onclick="changeQuantity(${item.id}, 1)" class="text-gray-600 font-bold px-1 text-xs touch-press">+</button>
+            </div>
+
+            <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-600 p-1 touch-press" title="Remove">
+              <i class="fa-solid fa-trash-can text-xs"></i>
+            </button>
+          </div>
+        `).join('');
+      }
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cart-drawer');
+      const panel = document.getElementById('cart-panel');
+      if (open) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        panel.classList.remove('translate-y-full', 'md:translate-x-full');
+      } else {
+        drawer.classList.add('opacity-0');
+        panel.classList.add('translate-y-full', 'md:translate-x-full');
+        setTimeout(() => drawer.classList.add('pointer-events-none'), 300);
+      }
+    }
+
+    function triggerCheckoutModal() {
+      if (cart.length === 0) {
+        showToast('Your bag is empty!');
+        return;
+      }
+      toggleCartDrawer(false);
+      document.getElementById('checkout-modal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkout-modal').classList.add('hidden');
+    }
+
+    function dispatchWhatsAppMessage(messageText) {
+      const now = Date.now();
+      if (now - lastOrderTimestamp < 3500) {
+        showToast('Please wait a moment before sending again.');
+        return;
+      }
+      lastOrderTimestamp = now;
+
+      activeGeneratedMessage = messageText;
+      const encodedMsg = encodeURIComponent(messageText);
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`;
+
+      document.getElementById('order-preview-box').innerText = messageText;
+      document.getElementById('direct-whatsapp-link').href = whatsappUrl;
+      document.getElementById('order-success-modal').classList.remove('hidden');
+
+      // Direct navigation prevents mobile popup blocks
+      window.location.href = whatsappUrl;
+    }
+
+    function orderViaWhatsAppDirect() {
+      const msg = `Hi Righteous Lips! 💋 I would like to order your R60 Lip Goodie Packets. Please assist me with stock and The Courier Guy Locker delivery in South Africa!`;
+      dispatchWhatsAppMessage(msg);
+    }
+
+    function handleFinalOrder(e) {
+      e.preventDefault();
+      
+      const firstName = sanitizeInput(document.getElementById('cust-first-name').value).trim();
+      const lastName = sanitizeInput(document.getElementById('cust-last-name').value).trim();
+      const phone = sanitizeInput(document.getElementById('cust-phone').value).trim();
+      const locker = sanitizeInput(document.getElementById('cust-locker-name').value).trim();
+      const city = sanitizeInput(document.getElementById('cust-city').value).trim();
+      const province = sanitizeInput(document.getElementById('cust-province').value).trim();
+
+      const phoneErr = document.getElementById('phone-error');
+      if (!isValidSAPhone(phone)) {
+        phoneErr.classList.remove('hidden');
+        return;
+      } else {
+        phoneErr.classList.add('hidden');
+      }
+
+      if (!firstName || !locker) {
+        alert('Please fill in your Name and preferred Courier Guy / Pudo Locker.');
+        return;
+      }
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const shipping = subtotal >= FREE_LOCKER_THRESHOLD ? 0 : SA_LOCKER_FEE;
+      const total = subtotal + shipping;
+
+      let itemsText = cart.map(i => `• ${i.quantity}x ${i.name} (${formatRands(i.price * i.quantity)})`).join('\n');
+      
+      let message = 
+`*NEW ORDER - RIGHTEOUS LIPS* 💋
+"feel good • look good • be righteous"
+
+*Customer:* ${firstName} ${lastName}
+*SMS Pin Cellphone:* ${phone}
+*The Courier Guy Locker:* ${locker}
+*Location:* ${city}, ${province} (South Africa)
+
+*Items Ordered:*
+${itemsText}
+
+*Subtotal:* ${formatRands(subtotal)}
+*Locker Delivery:* ${shipping === 0 ? 'FREE' : 'R60.00'}
+*Total Payable:* ${formatRands(total)}
+
+*Capitec Banking Details:*
+• Holder: Miss M Oluga
+• Acc: 2101932039 (Capitec)
+• PayShap: 0813398077@capitec
+• Reference: ${firstName} ${lastName}
+
+_I will make an immediate payment and send my Proof of Payment (POP) screenshot right now!_`;
+
+      closeCheckoutModal();
+
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.7 }
+        });
+      }
+
+      dispatchWhatsAppMessage(message);
+      cart = [];
+      updateCart();
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('order-success-modal').classList.add('hidden');
+    }
+
+    function copyOrderText() {
+      const text = activeGeneratedMessage || document.getElementById('order-preview-box').innerText;
+      copyToClipboardText(text, 'Order text');
+    }
+
+    function copyToClipboardText(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`Copied ${label}!`);
+        }).catch(() => fallbackCopy(text, label));
+      } else {
+        fallbackCopy(text, label);
+      }
+    }
+
+    function fallbackCopy(text, label) {
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      temp.style.position = 'fixed';
+      temp.style.left = '-9999px';
+      document.body.appendChild(temp);
+      temp.select();
+      try {
+        document.execCommand('copy');
+        showToast(`Copied ${label}!`);
+      } catch (err) {
+        showToast(`Please copy manually: ${text}`);
+      }
+      document.body.removeChild(temp);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = msg;
+      toast.classList.remove('-translate-y-20', 'opacity-0');
+      setTimeout(() => toast.classList.add('-translate-y-20', 'opacity-0'), 3000);
+    }
+
+    function renderAllViews() {
+      renderHeroPills();
+      renderStockToggles();
+      renderPacketsGrid();
+      switchHeroDisplay(currentHeroKey);
+    }
+
+    window.onload = function() {
+      initStockState();
+      renderAllViews();
+      updateCart();
+    };
+  </script>
+</body>
+</html>
